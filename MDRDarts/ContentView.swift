@@ -28,7 +28,7 @@ struct ContentView: View {
             HStack{
                 Text("Connect")
                     .onTapGesture {
-                        viewModel.connect()
+                        viewModel.viewDidLoad()
                     }
                 Text("Subscribe")
                     .onTapGesture {
@@ -36,7 +36,7 @@ struct ContentView: View {
                     }
                 Text("Send a message")
                     .onTapGesture {
-                        viewModel.sendMessage(msg: "dont", top: "darts")
+                        viewModel.publishMessage("Hello from iPhone", onTopic: "darts")
                     }
             }
             Text("Print Received Message")
