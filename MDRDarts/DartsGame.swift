@@ -13,6 +13,7 @@ struct DartsGame {
     var winner = 0
     // this variable selects which player to subtract from
     var whichPlayer: Int
+    var throwCount: Int
     
     
     init(scores: Int) {
@@ -22,6 +23,7 @@ struct DartsGame {
         self.scores.append(Score(score: scores, id: 1))
         self.scores.append(Score(score: scores, id: 2))
         self.whichPlayer = 1
+        self.throwCount = 1
     }
     
     mutating func lower(score: Score, amt: Int) {

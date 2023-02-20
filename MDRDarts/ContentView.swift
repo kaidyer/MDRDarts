@@ -13,6 +13,8 @@ struct ContentView: View {
         var Player1 = viewModel.score[0]
         var Player2 = viewModel.score[1]
         let recScores = viewModel.recScores
+        let p1score = viewModel.p1score
+        let p2score = viewModel.p2score
         VStack {
             Text("Smokin' D.A.R.T.S")
                 .font(.title)
@@ -49,7 +51,7 @@ struct ContentView: View {
             Text("Recommended Throws")
                 .font(.title)
                 .padding(.top)
-            RecView(recScores: recScores, player1: Player1, player2: Player2)
+            RecView(recScores: recScores, player1Score: p1score, player2Score: p2score)
             Spacer()
             Text("Reset")
                 .onTapGesture {
@@ -78,12 +80,10 @@ struct ScoreView: View {
 
 struct RecView: View {
     var recScores: [Int: String]
-    var player1: DartsGame.Score
-    var player2: DartsGame.Score
+    var player1Score: Int
+    var player2Score: Int
     
     var body: some View {
-        let player1Score = player1.score
-        let player2Score = player2.score
         HStack{
             if (player1Score == 0) {
                 Text("Player 1 wins!")

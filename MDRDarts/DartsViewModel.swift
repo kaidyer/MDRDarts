@@ -37,8 +37,29 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
         return model.whichPlayer
     }
     
+    var throwCount: Int {
+        return model.throwCount
+    }
+    
     var recScores: [Int: String] {
         return model.recScores
+    }
+    
+    var oldscore1 = 201
+    var oldscore2 = 201
+    
+    var p1score: Int {
+        if throwCount == 1{
+            oldscore1 = score[0].score
+        }
+        return oldscore1
+    }
+    
+    var p2score: Int {
+        if throwCount == 1{
+            oldscore2 = score[1].score
+        }
+        return oldscore2
     }
     
     func lower(_ score: Score, amt: Int) {
@@ -109,14 +130,22 @@ extension DartsViewModel {
             }
             else {
                 if whichPlayer == 1 {
-                    lower(score[0], amt: modifier * subInt)
+                    while throwCount <= 3 {
+                        lower(score[0], amt: modifier * subInt)
+                        print("modifier \(modifier), subtracting \(subInt)")
+                        model.throwCount = throwCount + 1
+                    }
                     model.whichPlayer = 2
-                    print("modifier \(modifier), subtracting \(subInt)")
+                    model.throwCount = 1
+                    
                 }
                 else {
-                    lower(score[1], amt: modifier * subInt)
+                    while throwCount <= 3 {
+                        lower(score[1], amt: modifier * subInt)
+                        print("modifier \(modifier), subtracting \(subInt)")
+                    }
                     model.whichPlayer = 1
-                    print("modifier \(modifier), subtracting \(subInt)")
+                    model.throwCount = 1
                 }
             }
         }
