@@ -20,14 +20,30 @@ struct ContentView: View {
                 .font(.title)
                 .fontWeight(.bold)
             Spacer()
+            CurrentPlayer(whichPlayer: viewModel.whichPlayer)
             Text("Score")
                 .font(.largeTitle)
                 .fontWeight(.bold)
             HStack{
-                ScoreView(score: Player1, playerID: 1)
+                ZStack{
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(.red)
+                        .frame(width: 150, height: 150)
+                    ScoreView(score: Player1, playerID: 1)
+                }
                 Spacer()
-                ScoreView(score: Player2, playerID: 2)
+                ZStack{
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(.blue)
+                        .frame(width: 150, height: 150)
+                    ScoreView(score: Player2, playerID: 2)
+                }
             }
+            Text("Recommended Throws")
+                .font(.title)
+                .padding(.top)
+            RecView(recScores: recScores, player1Score: p1score, player2Score: p2score)
+            Spacer()
             HStack{
                 Text("Connect")
                     .onTapGesture {
@@ -38,30 +54,42 @@ struct ContentView: View {
                     .onTapGesture {
                         viewModel.subscribe()
                     }
-//                Text("Send a message")
-//                    .onTapGesture {
-//                        viewModel.publishMessage("Hello from iPhone", onTopic: "darts")
-//                    }
             }
-//            Text("lower")
-//                .onTapGesture {
-//                    viewModel.lower(Player1, amt: 10)
-//                    viewModel.lower(Player2, amt: 15)
-//                }
-            Text("Recommended Throws")
-                .font(.title)
-                .padding(.top)
-            RecView(recScores: recScores, player1Score: p1score, player2Score: p2score)
-            Spacer()
             Text("Reset")
                 .onTapGesture {
                     viewModel.resetGame()
                 }
-            
+            }
+        }
+    }
+
+struct CurrentPlayer: View {
+    var whichPlayer: Int
+    
+    var body: some View {
+        ZStack{
+            if whichPlayer == 1 {
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(.red)
+                    .frame(width: 150, height: 50)
+            }
+            else {
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(.blue)
+                    .frame(width: 150, height: 50)
+            }
+            if whichPlayer == 1 {
+                Text("Player 1's Turn")
+                    .font(.headline)
+            }
+            else {
+                Text("Player 2's Turn")
+                    .font(.headline)
+            }
         }
     }
 }
-
+    
 struct ScoreView: View {
     var score: DartsGame.Score
     var playerID: Int
@@ -74,7 +102,6 @@ struct ScoreView: View {
                 .font(.system(size: 40))
                 .fontWeight(.bold)
         }
-        
     }
 }
 
