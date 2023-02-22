@@ -130,22 +130,26 @@ extension DartsViewModel {
             }
             else {
                 if whichPlayer == 1 {
-                    while throwCount <= 3 {
+                    if throwCount <= 3 {
                         lower(score[0], amt: modifier * subInt)
                         print("modifier \(modifier), subtracting \(subInt)")
                         model.throwCount = throwCount + 1
                     }
-                    model.whichPlayer = 2
-                    model.throwCount = 1
-                    
+                    if throwCount > 3 {
+                        model.whichPlayer = 2
+                        model.throwCount = 1
+                    }
                 }
                 else {
-                    while throwCount <= 3 {
+                    if throwCount <= 3 {
                         lower(score[1], amt: modifier * subInt)
                         print("modifier \(modifier), subtracting \(subInt)")
+                        model.throwCount = throwCount + 1
                     }
-                    model.whichPlayer = 1
-                    model.throwCount = 1
+                    if throwCount > 3 {
+                        model.whichPlayer = 1
+                        model.throwCount = 1
+                    }
                 }
             }
         }
