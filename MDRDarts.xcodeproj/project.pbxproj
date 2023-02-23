@@ -15,6 +15,7 @@
 		190A4FC0293E88F500526C4A /* DartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190A4FBF293E88F500526C4A /* DartsViewModel.swift */; };
 		190A4FC2293E891B00526C4A /* DartsGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190A4FC1293E891B00526C4A /* DartsGame.swift */; };
 		194030F129A7DE3B001EA9F0 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194030F029A7DE3B001EA9F0 /* StartView.swift */; };
+		194030F729A7E701001EA9F0 /* StartList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194030F629A7E701001EA9F0 /* StartList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		190A4FBF293E88F500526C4A /* DartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartsViewModel.swift; sourceTree = "<group>"; };
 		190A4FC1293E891B00526C4A /* DartsGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartsGame.swift; sourceTree = "<group>"; };
 		194030F029A7DE3B001EA9F0 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		194030F629A7E701001EA9F0 /* StartList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartList.swift; sourceTree = "<group>"; };
 		265A692E937456D6315B26E9 /* Pods-MDRDarts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRDarts.debug.xcconfig"; path = "Target Support Files/Pods-MDRDarts/Pods-MDRDarts.debug.xcconfig"; sourceTree = "<group>"; };
 		27106B9A2B40DD14468E2D9A /* Pods-MDRDarts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRDarts.release.xcconfig"; path = "Target Support Files/Pods-MDRDarts/Pods-MDRDarts.release.xcconfig"; sourceTree = "<group>"; };
 		27C9D6F58017F82ADEB83C97 /* Pods_MDRDarts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDRDarts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 			children = (
 				190A4FB3293E86A300526C4A /* ContentView.swift */,
 				194030F029A7DE3B001EA9F0 /* StartView.swift */,
+				194030F629A7E701001EA9F0 /* StartList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			files = (
 				190A4FB4293E86A300526C4A /* ContentView.swift in Sources */,
 				194030F129A7DE3B001EA9F0 /* StartView.swift in Sources */,
+				194030F729A7E701001EA9F0 /* StartList.swift in Sources */,
 				190A4FB2293E86A300526C4A /* MDRDartsApp.swift in Sources */,
 				190A4FC2293E891B00526C4A /* DartsGame.swift in Sources */,
 				190A4FC0293E88F500526C4A /* DartsViewModel.swift in Sources */,
