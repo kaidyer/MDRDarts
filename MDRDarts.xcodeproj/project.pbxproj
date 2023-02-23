@@ -72,11 +72,10 @@
 		190A4FB0293E86A300526C4A /* MDRDarts */ = {
 			isa = PBXGroup;
 			children = (
+				194030F529A7E3D1001EA9F0 /* Views */,
 				190A4FB1293E86A300526C4A /* MDRDartsApp.swift */,
-				190A4FB3293E86A300526C4A /* ContentView.swift */,
 				190A4FBF293E88F500526C4A /* DartsViewModel.swift */,
 				190A4FC1293E891B00526C4A /* DartsGame.swift */,
-				194030F029A7DE3B001EA9F0 /* StartView.swift */,
 				190A4FB5293E86A500526C4A /* Assets.xcassets */,
 				190A4FB7293E86A500526C4A /* Preview Content */,
 			);
@@ -89,6 +88,15 @@
 				190A4FB8293E86A500526C4A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		194030F529A7E3D1001EA9F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				190A4FB3293E86A300526C4A /* ContentView.swift */,
+				194030F029A7DE3B001EA9F0 /* StartView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7BF128647568294FD91B96E7 /* Pods */ = {

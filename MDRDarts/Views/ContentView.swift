@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = DartsViewModel()
     var body: some View {
-        var Player1 = viewModel.score[0]
-        var Player2 = viewModel.score[1]
+        let Player1 = viewModel.score[0]
+        let Player2 = viewModel.score[1]
         let recScores = viewModel.recScores
         let p1score = viewModel.p1score
         let p2score = viewModel.p2score

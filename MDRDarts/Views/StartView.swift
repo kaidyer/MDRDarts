@@ -9,10 +9,12 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        NavigationLink{
-            ContentView()
-        } label: {
-            Text("Start")
+        NavigationView{
+            NavigationLink{
+                ContentView()
+            } label: {
+                Text("Start")
+            }
         }
     }
 }

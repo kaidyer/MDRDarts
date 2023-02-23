@@ -11,7 +11,8 @@ import SwiftUI
 struct MDRDartsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // ContentView()
+            StartView()
         }
     }
 }
