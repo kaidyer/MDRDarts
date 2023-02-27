@@ -108,10 +108,18 @@
 				194030F629A7E701001EA9F0 /* StartList.swift */,
 				194030FA29A852AB001EA9F0 /* SettingView.swift */,
 				194030FC29A856F2001EA9F0 /* DataView.swift */,
+				1985E6D429AD774900E339BC /* Board */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1985E6D429AD774900E339BC /* Board */ = {
+			isa = PBXGroup;
+			children = (
 				1985E6D029A938D500E339BC /* BoardSegment.swift */,
 				1985E6D229AC49C800E339BC /* BoardView.swift */,
 			);
-			path = Views;
+			path = Board;
 			sourceTree = "<group>";
 		};
 		7BF128647568294FD91B96E7 /* Pods */ = {

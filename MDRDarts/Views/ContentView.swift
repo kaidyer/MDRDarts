@@ -19,7 +19,7 @@ struct ContentView: View {
             Text("Smokin' D.A.R.T.S")
                 .font(.title)
                 .fontWeight(.bold)
-            Spacer()
+            BoardView()
             CurrentPlayer(whichPlayer: viewModel.whichPlayer)
             Text("Score")
                 .font(.largeTitle)
