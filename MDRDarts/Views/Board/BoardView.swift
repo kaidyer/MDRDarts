@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BoardView: View {
+    @StateObject private var viewModel = BoardViewModel()
     // let startAngles: [Double] = [81, 63,45,27,9,-9,-27,-45,-63,-81,-99,-117,-135,-153,-171,-189,-207,-225,-243,-261]
     let startAngles1: [Double] = [63, 27, -9, -45, -81, -117, -153, -189, -225, -261]
     let startAngles2: [Double] = [81, 45, 9, -27, -63, -99, -135, -171, -207, -243]
@@ -18,8 +19,8 @@ struct BoardView: View {
     let myGreen = Color(red: 0.0235, green: 0.4509, blue: 0.1098)
     
     var body: some View {
-        let colorList1: [Color] = [myRed, myBlack, myRed, myBlack]
-        let colorList2: [Color] = [myGreen, myWhite, myGreen, myWhite]
+        let colorList1 = viewModel.colorList1
+        let colorList2 = viewModel.colorList2
         ZStack {
             ForEach(startAngles1, id: \.self) {
                 startAngle in SegmentView(start: startAngle, end: startAngle + 18, colorList: colorList1)
