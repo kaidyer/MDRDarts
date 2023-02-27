@@ -14,15 +14,15 @@ struct StartView: View {
                 NavigationLink{
                     ContentView()
                 } label: {
-                    StartList(color: .red, titletext: "Start Game", imagename: "darts", useSFSymbol: false)
+                    StartList(color: .red, titletext: "Start Darts", imagename: "darts", useSFSymbol: false)
                 }
                 NavigationLink{
-                    ContentView()
+                    DataView()
                 } label: {
                     StartList(color: .yellow, titletext: "Data", imagename: "list.number", useSFSymbol: true)
                 }
                 NavigationLink{
-                    ContentView()
+                    SettingView(gameType: 1, trackStats: true)
                 } label: {
                     StartList(color: .blue, titletext: "Settings", imagename: "gear", useSFSymbol: true)
                 }

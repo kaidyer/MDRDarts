@@ -16,6 +16,10 @@
 		190A4FC2293E891B00526C4A /* DartsGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190A4FC1293E891B00526C4A /* DartsGame.swift */; };
 		194030F129A7DE3B001EA9F0 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194030F029A7DE3B001EA9F0 /* StartView.swift */; };
 		194030F729A7E701001EA9F0 /* StartList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194030F629A7E701001EA9F0 /* StartList.swift */; };
+		194030FB29A852AB001EA9F0 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194030FA29A852AB001EA9F0 /* SettingView.swift */; };
+		194030FD29A856F2001EA9F0 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194030FC29A856F2001EA9F0 /* DataView.swift */; };
+		1985E6D129A938D500E339BC /* BoardSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985E6D029A938D500E339BC /* BoardSegment.swift */; };
+		1985E6D329AC49C800E339BC /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985E6D229AC49C800E339BC /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		190A4FC1293E891B00526C4A /* DartsGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartsGame.swift; sourceTree = "<group>"; };
 		194030F029A7DE3B001EA9F0 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		194030F629A7E701001EA9F0 /* StartList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartList.swift; sourceTree = "<group>"; };
+		194030FA29A852AB001EA9F0 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		194030FC29A856F2001EA9F0 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		1985E6D029A938D500E339BC /* BoardSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSegment.swift; sourceTree = "<group>"; };
+		1985E6D229AC49C800E339BC /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		265A692E937456D6315B26E9 /* Pods-MDRDarts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRDarts.debug.xcconfig"; path = "Target Support Files/Pods-MDRDarts/Pods-MDRDarts.debug.xcconfig"; sourceTree = "<group>"; };
 		27106B9A2B40DD14468E2D9A /* Pods-MDRDarts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRDarts.release.xcconfig"; path = "Target Support Files/Pods-MDRDarts/Pods-MDRDarts.release.xcconfig"; sourceTree = "<group>"; };
 		27C9D6F58017F82ADEB83C97 /* Pods_MDRDarts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDRDarts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +106,10 @@
 				190A4FB3293E86A300526C4A /* ContentView.swift */,
 				194030F029A7DE3B001EA9F0 /* StartView.swift */,
 				194030F629A7E701001EA9F0 /* StartList.swift */,
+				194030FA29A852AB001EA9F0 /* SettingView.swift */,
+				194030FC29A856F2001EA9F0 /* DataView.swift */,
+				1985E6D029A938D500E339BC /* BoardSegment.swift */,
+				1985E6D229AC49C800E339BC /* BoardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,8 +240,12 @@
 				190A4FB4293E86A300526C4A /* ContentView.swift in Sources */,
 				194030F129A7DE3B001EA9F0 /* StartView.swift in Sources */,
 				194030F729A7E701001EA9F0 /* StartList.swift in Sources */,
+				194030FB29A852AB001EA9F0 /* SettingView.swift in Sources */,
 				190A4FB2293E86A300526C4A /* MDRDartsApp.swift in Sources */,
 				190A4FC2293E891B00526C4A /* DartsGame.swift in Sources */,
+				194030FD29A856F2001EA9F0 /* DataView.swift in Sources */,
+				1985E6D329AC49C800E339BC /* BoardView.swift in Sources */,
+				1985E6D129A938D500E339BC /* BoardSegment.swift in Sources */,
 				190A4FC0293E88F500526C4A /* DartsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
