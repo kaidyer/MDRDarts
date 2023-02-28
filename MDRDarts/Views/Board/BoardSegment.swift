@@ -29,11 +29,12 @@ struct PieSegment: Shape {
 
 struct SegmentView: View {
     @State var fileData: Data?
-    var start: Double
-    var end: Double
-    var colorList: [Color]
+    var color: colorList
     
     var body: some View {
+        let start = color.degree
+        let end = start + 18
+        let colorList = color.colors
         ZStack {
             PieSegment(start: .degrees(start), end: .degrees(end))
                 .stroke(.black)
@@ -66,11 +67,11 @@ struct SegmentView_Previews: PreviewProvider {
         let myBlack = Color(red: 0.1019, green: 0.10588, blue: 0.1254)
         let myRed = Color(red: 0.843, green: 0.0784, blue: 0.08627)
         let myGreen = Color(red: 0.0235, green: 0.4509, blue: 0.1098)
-        let colorList: [Color] = [myRed, myBlack, myRed, myBlack]
-        let altcolorList: [Color] = [myGreen, myWhite, myGreen, myWhite]
+        let color1 = colorList(id: 20, degree: 81, colors: [myRed, myBlack, myRed, myBlack])
+        let color2 = colorList(id: 1, degree: 63, colors: [myGreen, myWhite, myGreen, myWhite])
         ZStack{
-            SegmentView(start: 81, end: 99, colorList: colorList)
-            SegmentView(start:-261, end: -243, colorList: altcolorList)
+            SegmentView(color: color1)
+            SegmentView(color: color2)
         }
     }
 }

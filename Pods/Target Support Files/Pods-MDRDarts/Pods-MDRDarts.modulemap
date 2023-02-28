@@ -1,0 +1,6 @@
+framework module Pods_MDRDarts {
+  umbrella header "Pods-MDRDarts-umbrella.h"
+
+  export *
+  module * { export * }
+}
