@@ -25,6 +25,9 @@ struct BoardView: View {
                 .stroke(.black)
                 .background(Circle().fill(.red))
                 .frame(width: 25)
+        }.onTapGesture {
+            viewModel.setYellow(slice: 16, block: 1)
+            viewModel.setYellow(slice: 20, block: 3)
         }
     }
 }
