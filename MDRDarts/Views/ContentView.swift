@@ -36,24 +36,25 @@ struct ContentView: View {
                 viewModel.setYellow(slice: 2, block: 1)
                 viewModel.setYellow(slice: 20, block: 3)
             }
-            CurrentPlayer(whichPlayer: viewModel.whichPlayer)
-            Text("Score")
-                .font(.largeTitle)
-                .fontWeight(.bold)
             HStack{
                 ZStack{
                     RoundedRectangle(cornerRadius: 25)
                         .fill(.red)
                         .frame(width: 150, height: 150)
                     ScoreView(score: Player1, playerID: 1)
+                }.offset(x: 20)
+                VStack {
+                    CurrentPlayer(whichPlayer: viewModel.whichPlayer)
+                    Text("Score")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
                 }
-                Spacer()
                 ZStack{
                     RoundedRectangle(cornerRadius: 25)
                         .fill(.blue)
                         .frame(width: 150, height: 150)
                     ScoreView(score: Player2, playerID: 2)
-                }
+                }.offset(x: -20)
             }
             Text("Recommended Throws")
                 .font(.title)
@@ -77,6 +78,7 @@ struct ContentView: View {
                 }
             }
         }
+        
     }
 
 struct CurrentPlayer: View {
