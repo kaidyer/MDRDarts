@@ -7,6 +7,7 @@
 
 import Foundation
 import MQTTClient
+import SwiftUI
 
 struct DartsGame {
     var scores: Array<Score>
@@ -14,6 +15,17 @@ struct DartsGame {
     // this variable selects which player to subtract from
     var whichPlayer: Int
     var throwCount: Int
+    
+    // DartBoard data
+    
+    let startAngles: [Double] = [81, 63,45,27,9,-9,-27,-45,-63,-81,-99,-117,-135,-153,-171,-189,-207,-225,-243,-261]
+    let idList: [Int] = [20, 1, 18, 4, 13, 6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5]
+    let myWhite = Color(red: 0.96, green: 0.894, blue: 0.796)
+    let myBlack = Color(red: 0.1019, green: 0.10588, blue: 0.1254)
+    let myRed = Color(red: 0.843, green: 0.0784, blue: 0.08627)
+    let myGreen = Color(red: 0.0235, green: 0.4509, blue: 0.1098)
+    
+    var colors = [colorList]()
     
     
     init(scores: Int) {
@@ -24,6 +36,16 @@ struct DartsGame {
         self.scores.append(Score(score: scores, id: 2))
         self.whichPlayer = 1
         self.throwCount = 1
+        
+        // DartBoard init()
+        self.colors = []
+        for index in 0...idList.count-1 {
+            if index % 2 == 0 {
+                self.colors.append(colorList(id: idList[index], degree: startAngles[index], colors: [myRed, myBlack, myRed, myBlack]))
+            } else {
+                self.colors.append(colorList(id: idList[index], degree: startAngles[index], colors: [myGreen, myWhite, myGreen, myWhite]))
+            }
+        }
     }
     
     mutating func lower(score: Score, amt: Int) {
@@ -47,6 +69,16 @@ struct DartsGame {
         self.scores.append(Score(score: scores, id: 2))
         self.winner = 0
         self.whichPlayer = 1
+        
+        // DartBoard init()
+        self.colors = []
+        for index in 0...idList.count-1 {
+            if index % 2 == 0 {
+                self.colors.append(colorList(id: idList[index], degree: startAngles[index], colors: [myRed, myBlack, myRed, myBlack]))
+            } else {
+                self.colors.append(colorList(id: idList[index], degree: startAngles[index], colors: [myGreen, myWhite, myGreen, myWhite]))
+            }
+        }
     }
     
     mutating func lower1() {

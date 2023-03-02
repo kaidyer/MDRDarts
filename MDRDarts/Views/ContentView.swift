@@ -19,7 +19,23 @@ struct ContentView: View {
             Text("Smokin' D.A.R.T.S")
                 .font(.title)
                 .fontWeight(.bold)
-            BoardView()
+            let colors = viewModel.colors
+            ZStack {
+                ForEach(colors) {
+                    color in SegmentView(color: color)
+                }
+                Circle()
+                    .stroke(.black)
+                    .background(Circle().fill(.green))
+                    .frame(width: 50)
+                Circle()
+                    .stroke(.black)
+                    .background(Circle().fill(.red))
+                    .frame(width: 25)
+            }.onTapGesture {
+                viewModel.setYellow(slice: 2, block: 1)
+                viewModel.setYellow(slice: 20, block: 3)
+            }
             CurrentPlayer(whichPlayer: viewModel.whichPlayer)
             Text("Score")
                 .font(.largeTitle)
@@ -143,6 +159,7 @@ struct RecView: View {
         
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
