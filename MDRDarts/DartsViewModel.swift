@@ -78,6 +78,10 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
         return model.colors
     }
     
+    var centerColors: [Color] {
+        return model.centerColors
+    }
+    
     func getSegment(id: Int) -> colorList? {
         for color in model.colors {
             if color.id == id {
@@ -167,7 +171,10 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
         session?.subscribe(toTopic: "0", at: .exactlyOnce) { error, result in
             print("subscribe result error \(String(describing: error)) result \(result!)")
         }
-        session?.subscribe(toTopic: "1", at: .exactlyOnce) { error, result in
+        session?.subscribe(toTopic: "11", at: .exactlyOnce) { error, result in
+            print("subscribe result error \(String(describing: error)) result \(result!)")
+        }
+        session?.subscribe(toTopic: "12", at: .exactlyOnce) { error, result in
             print("subscribe result error \(String(describing: error)) result \(result!)")
         }
         session?.subscribe(toTopic: "2", at: .exactlyOnce) { error, result in
@@ -201,13 +208,38 @@ extension DartsViewModel {
             else {
                 if whichPlayer == 1 {
                     if throwCount <= 3 {
-                        lower(score[0], amt: modifier * subInt)
+                        if subInt == 11 || subInt == 12 {
+                            lower(score[0], amt: modifier)
+                        } else {
+                            lower(score[0], amt: modifier * subInt)
+                            
+                        }
                         print("modifier \(modifier), subtracting \(subInt)")
                         model.throwCount = throwCount + 1
+//                        if subInt == 25 {
+//                            model.centerColors[0] = Color(.yellow)
+//                        } else if subInt == 50 {
+//                            model.centerColors[1] = Color(.yellow)
+//                        } else {
+                        switch modifier {
+                        case 11:
+                            setYellow(slice: subInt, block: 1)
+                        case 12:
+                            setYellow(slice: subInt, block: 3)
+                        case 2:
+                            setYellow(slice: subInt, block: 0)
+                        case 3:
+                            setYellow(slice: subInt, block: 2)
+                        default:
+                            setYellow(slice: subInt, block: 1)
+                        }
+//                        }
+                        
                     }
                     if throwCount > 3 {
                         model.whichPlayer = 2
                         model.throwCount = 1
+                        model.reset_colors()
                     }
                 }
                 else {
@@ -219,6 +251,7 @@ extension DartsViewModel {
                     if throwCount > 3 {
                         model.whichPlayer = 1
                         model.throwCount = 1
+                        model.reset_colors()
                     }
                 }
             }

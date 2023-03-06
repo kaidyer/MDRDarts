@@ -26,11 +26,11 @@ struct ContentView: View {
                 }
                 Circle()
                     .stroke(.black)
-                    .background(Circle().fill(.green))
+                    .background(Circle().fill(viewModel.centerColors[0]))
                     .frame(width: 50)
                 Circle()
                     .stroke(.black)
-                    .background(Circle().fill(.red))
+                    .background(Circle().fill(viewModel.centerColors[1]))
                     .frame(width: 25)
             }.onTapGesture {
                 viewModel.setYellow(slice: 2, block: 1)
@@ -65,7 +65,7 @@ struct ContentView: View {
                 Text("Connect")
                     .onTapGesture {
                         viewModel.viewDidLoad()
-                        // viewModel.subscribe()
+                        //viewModel.subscribe()
                     }
                 Text("Subscribe")
                     .onTapGesture {

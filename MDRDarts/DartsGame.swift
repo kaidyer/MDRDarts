@@ -26,6 +26,7 @@ struct DartsGame {
     let myGreen = Color(red: 0.0235, green: 0.4509, blue: 0.1098)
     
     var colors = [colorList]()
+    var centerColors = [Color]()
     
     
     init(scores: Int) {
@@ -39,6 +40,7 @@ struct DartsGame {
         
         // DartBoard init()
         self.colors = []
+        self.centerColors = []
         for index in 0...idList.count-1 {
             if index % 2 == 0 {
                 self.colors.append(colorList(id: idList[index], degree: startAngles[index], colors: [myRed, myBlack, myRed, myBlack]))
@@ -46,6 +48,8 @@ struct DartsGame {
                 self.colors.append(colorList(id: idList[index], degree: startAngles[index], colors: [myGreen, myWhite, myGreen, myWhite]))
             }
         }
+        self.centerColors.append(myGreen)
+        self.centerColors.append(myRed)
     }
     
     mutating func lower(score: Score, amt: Int) {
@@ -71,7 +75,17 @@ struct DartsGame {
         self.whichPlayer = 1
         
         // DartBoard init()
+        reset_colors()
+    }
+    
+    mutating func lower1() {
+        lower(score: scores[0], amt: 10)
+    }
+    
+    mutating func reset_colors() {
+        // DartBoard init()
         self.colors = []
+        self.centerColors = []
         for index in 0...idList.count-1 {
             if index % 2 == 0 {
                 self.colors.append(colorList(id: idList[index], degree: startAngles[index], colors: [myRed, myBlack, myRed, myBlack]))
@@ -79,10 +93,8 @@ struct DartsGame {
                 self.colors.append(colorList(id: idList[index], degree: startAngles[index], colors: [myGreen, myWhite, myGreen, myWhite]))
             }
         }
-    }
-    
-    mutating func lower1() {
-        lower(score: scores[0], amt: 10)
+        self.centerColors.append(myGreen)
+        self.centerColors.append(myRed)
     }
     
     struct Score: Identifiable {

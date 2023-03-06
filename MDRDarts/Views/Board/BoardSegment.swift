@@ -35,28 +35,30 @@ struct SegmentView: View {
         let start = color.degree
         let end = start + 18
         let colorList = color.colors
-        ZStack {
-            PieSegment(start: .degrees(start), end: .degrees(end))
-                .stroke(.black)
-                .background(PieSegment(start: .degrees(start), end: .degrees(end)).fill(colorList[0]))
-                .frame(width: 350, height: 350)
-            PieSegment(start: .degrees(start), end: .degrees(end))
-                .stroke(.black)
-                .frame(width: 325, height: 325)
-                .background(PieSegment(start: .degrees(start), end: .degrees(end)).fill(colorList[1]))
-            PieSegment(start: .degrees(start), end: .degrees(end))
-                .stroke(.black)
-                .frame(width: 200, height: 200)
-                .background(PieSegment(start: .degrees(start), end: .degrees(end)).fill(colorList[2]))
-            PieSegment(start: .degrees(start), end: .degrees(end))
-                .stroke(.black)
-                .frame(width: 180, height: 180)
-                .background(PieSegment(start: .degrees(start), end: .degrees(end)).fill(colorList[3]))
-//            Circle()
-//                .stroke(.black)
-//                .background(Circle().fill(.blue))
-//                .frame(width: 150, height: 150)
-            
+        VStack {
+            ZStack {
+                PieSegment(start: .degrees(start), end: .degrees(end))
+                    .stroke(.black)
+                    .background(PieSegment(start: .degrees(start), end: .degrees(end)).fill(colorList[0]))
+                    .frame(width: 350, height: 350)
+                PieSegment(start: .degrees(start), end: .degrees(end))
+                    .stroke(.black)
+                    .frame(width: 325, height: 325)
+                    .background(PieSegment(start: .degrees(start), end: .degrees(end)).fill(colorList[1]))
+                PieSegment(start: .degrees(start), end: .degrees(end))
+                    .stroke(.black)
+                    .frame(width: 200, height: 200)
+                    .background(PieSegment(start: .degrees(start), end: .degrees(end)).fill(colorList[2]))
+                PieSegment(start: .degrees(start), end: .degrees(end))
+                    .stroke(.black)
+                    .frame(width: 180, height: 180)
+                    .background(PieSegment(start: .degrees(start), end: .degrees(end)).fill(colorList[3]))
+                //            Circle()
+                //                .stroke(.black)
+                //                .background(Circle().fill(.blue))
+                //                .frame(width: 150, height: 150)
+                
+            }
         }
     }
 }
@@ -70,7 +72,7 @@ struct SegmentView_Previews: PreviewProvider {
         let color1 = colorList(id: 20, degree: 81, colors: [myRed, myBlack, myRed, myBlack])
         let color2 = colorList(id: 1, degree: 63, colors: [myGreen, myWhite, myGreen, myWhite])
         ZStack{
-            SegmentView(color: color1)
+            //SegmentView(color: color1)
             SegmentView(color: color2)
         }
     }
