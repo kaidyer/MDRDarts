@@ -208,32 +208,33 @@ extension DartsViewModel {
             else {
                 if whichPlayer == 1 {
                     if throwCount <= 3 {
-                        if subInt == 11 || subInt == 12 {
-                            lower(score[0], amt: modifier)
+                        if modifier == Int(11) || modifier == Int(12) {
+                            lower(score[0], amt: subInt)
                         } else {
                             lower(score[0], amt: modifier * subInt)
                             
                         }
                         print("modifier \(modifier), subtracting \(subInt)")
                         model.throwCount = throwCount + 1
-//                        if subInt == 25 {
-//                            model.centerColors[0] = Color(.yellow)
-//                        } else if subInt == 50 {
-//                            model.centerColors[1] = Color(.yellow)
-//                        } else {
-                        switch modifier {
-                        case 11:
-                            setYellow(slice: subInt, block: 1)
-                        case 12:
-                            setYellow(slice: subInt, block: 3)
-                        case 2:
-                            setYellow(slice: subInt, block: 0)
-                        case 3:
-                            setYellow(slice: subInt, block: 2)
-                        default:
-                            setYellow(slice: subInt, block: 1)
+                        
+                        if subInt == Int(25) {
+                            model.centerColors[0] = Color(.yellow)
+                        } else if subInt == Int(50) {
+                            model.centerColors[1] = Color(.yellow)
+                        } else {
+                            switch modifier {
+                            case 11:
+                                setYellow(slice: subInt, block: 1)
+                            case 12:
+                                setYellow(slice: subInt, block: 3)
+                            case 2:
+                                setYellow(slice: subInt, block: 0)
+                            case 3:
+                                setYellow(slice: subInt, block: 2)
+                            default:
+                                setYellow(slice: subInt, block: 1)
+                            }
                         }
-//                        }
                         
                     }
                     if throwCount > 3 {
@@ -244,9 +245,34 @@ extension DartsViewModel {
                 }
                 else {
                     if throwCount <= 3 {
-                        lower(score[1], amt: modifier * subInt)
+                        if modifier == Int(11) || modifier == Int(12) {
+                            lower(score[1], amt: subInt)
+                        } else {
+                            lower(score[1], amt: modifier * subInt)
+                            
+                        }
+                        
                         print("modifier \(modifier), subtracting \(subInt)")
                         model.throwCount = throwCount + 1
+                        
+                        if subInt == Int(25) {
+                            model.centerColors[0] = Color(.yellow)
+                        } else if subInt == Int(50) {
+                            model.centerColors[1] = Color(.yellow)
+                        } else {
+                            switch modifier {
+                            case 11:
+                                setYellow(slice: subInt, block: 1)
+                            case 12:
+                                setYellow(slice: subInt, block: 3)
+                            case 2:
+                                setYellow(slice: subInt, block: 0)
+                            case 3:
+                                setYellow(slice: subInt, block: 2)
+                            default:
+                                setYellow(slice: subInt, block: 1)
+                            }
+                        }
                     }
                     if throwCount > 3 {
                         model.whichPlayer = 1
