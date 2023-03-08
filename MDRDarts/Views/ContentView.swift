@@ -32,9 +32,6 @@ struct ContentView: View {
                     .stroke(.black)
                     .background(Circle().fill(viewModel.centerColors[1]))
                     .frame(width: 25)
-            }.onTapGesture {
-                viewModel.setYellow(slice: 2, block: 1)
-                viewModel.setYellow(slice: 20, block: 3)
             }
             HStack{
                 ZStack{
@@ -85,6 +82,7 @@ struct CurrentPlayer: View {
     var whichPlayer: Int
     
     var body: some View {
+        // let rectColor: Color
         ZStack{
             if whichPlayer == 1 {
                 RoundedRectangle(cornerRadius: 25)
@@ -130,7 +128,8 @@ struct RecView: View {
     
     var body: some View {
         HStack{
-            if (player1Score == 0) {
+            Spacer()
+            if (Int(player1Score) == 0) {
                 Text("Player 1 wins!")
             }
             else {
@@ -138,14 +137,14 @@ struct RecView: View {
                     Text(recommendedText1)
                 }
                 else {
-                    let recommendedText1 = "Reach a lower score first."
+                    let recommendedText1 = "No Checkout"
                     Text(recommendedText1)
                 }
             }
             
             Spacer()
             
-            if (player2Score == 0) {
+            if (Int(player2Score) == 0) {
                 Text("Player 2 wins!")
             }
             else {
@@ -153,10 +152,11 @@ struct RecView: View {
                     Text(recommendedText2)
                 }
                 else {
-                    let recommendedText2 = "Reach a lower score first."
+                    let recommendedText2 = "No Checkout"
                     Text(recommendedText2)
                 }
             }
+            Spacer()
         }
         
     }
