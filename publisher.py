@@ -1,9 +1,10 @@
 import paho.mqtt.publish as publish
+import time
 
 MQTT_SERVER = "broker.emqx.io"
 #MQTT_SERVER = "broker.hivemq.com"
 MQTT_PATH = "1"
-authentications = {'username': "kdyer", 'password': "Green"}
+authentications = {'username': "kdyer", 'password': "Green82"}
 
 # A function to publish the data to the MQTT server
 # this fnciton asks the user what channel they want, ranging from 0 to 3
@@ -17,6 +18,7 @@ while shouldContinue:
     score = input("Enter score (0-50): ")
     if score == "q":
         break
+    print(time.time())
     publish.single(channel, score, hostname=MQTT_SERVER, auth=authentications)
     #shouldContinue = input("Continue? (y/n): ")
     #if shouldContinue == "n":

@@ -26,6 +26,11 @@ struct StartView: View {
                 } label: {
                     StartList(color: .blue, titletext: "Settings", imagename: "gear", useSFSymbol: true)
                 }
+                NavigationLink{
+                    TutorialView()
+                } label: {
+                    StartList(color: .green, titletext: "How to Play", imagename: "studentdesk", useSFSymbol: true)
+                }
             }
             .navigationTitle("Smokin' DARTS")
         }

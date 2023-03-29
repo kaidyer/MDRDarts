@@ -13,7 +13,7 @@ struct StartList: View {
     var imagename: String
     var useSFSymbol: Bool
     var body: some View {
-        let heightRatio: CGFloat = 0.2
+        let heightRatio: CGFloat = 0.15
         ZStack {
             HStack {
                 Text(titletext)

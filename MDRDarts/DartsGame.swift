@@ -73,6 +73,7 @@ struct DartsGame {
         self.scores.append(Score(score: scores, id: 2))
         self.winner = 0
         self.whichPlayer = 1
+        self.throwCount = 1
         
         // DartBoard init()
         reset_colors()

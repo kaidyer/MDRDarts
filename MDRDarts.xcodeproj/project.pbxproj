@@ -22,6 +22,7 @@
 		1985E6D329AC49C800E339BC /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985E6D229AC49C800E339BC /* BoardView.swift */; };
 		1985E6D629AD784100E339BC /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985E6D529AD784100E339BC /* BoardViewModel.swift */; };
 		1985E6D829AD78DF00E339BC /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985E6D729AD78DF00E339BC /* BoardModel.swift */; };
+		19BDB54A29BA4D4D007918EC /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BDB54929BA4D4C007918EC /* TutorialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		1985E6D229AC49C800E339BC /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		1985E6D529AD784100E339BC /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		1985E6D729AD78DF00E339BC /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
+		19BDB54929BA4D4C007918EC /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		265A692E937456D6315B26E9 /* Pods-MDRDarts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRDarts.debug.xcconfig"; path = "Target Support Files/Pods-MDRDarts/Pods-MDRDarts.debug.xcconfig"; sourceTree = "<group>"; };
 		27106B9A2B40DD14468E2D9A /* Pods-MDRDarts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRDarts.release.xcconfig"; path = "Target Support Files/Pods-MDRDarts/Pods-MDRDarts.release.xcconfig"; sourceTree = "<group>"; };
 		27C9D6F58017F82ADEB83C97 /* Pods_MDRDarts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDRDarts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				194030F629A7E701001EA9F0 /* StartList.swift */,
 				194030FA29A852AB001EA9F0 /* SettingView.swift */,
 				194030FC29A856F2001EA9F0 /* DataView.swift */,
+				19BDB54929BA4D4C007918EC /* TutorialView.swift */,
 				1985E6D429AD774900E339BC /* Board */,
 			);
 			path = Views;
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1985E6D829AD78DF00E339BC /* BoardModel.swift in Sources */,
+				19BDB54A29BA4D4D007918EC /* TutorialView.swift in Sources */,
 				190A4FB4293E86A300526C4A /* ContentView.swift in Sources */,
 				194030F129A7DE3B001EA9F0 /* StartView.swift in Sources */,
 				194030F729A7E701001EA9F0 /* StartList.swift in Sources */,

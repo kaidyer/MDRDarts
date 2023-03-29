@@ -159,7 +159,7 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
         self.transport.port = MQTT_PORT
         session?.transport = transport
         session?.userName = "kdyer"
-        session?.password = "Green"
+        session?.password = "Green82"
         
         session?.connect()
     }
@@ -202,6 +202,8 @@ extension DartsViewModel {
             // topic: Str, msg: Int
             // topic: Int, msg: Str
             // topic: Str, msg: Str
+            let now = Date()
+            print("response time: \(now.timeIntervalSince1970)")
             if (modifier == -1) || (subInt == -1) {
                 print("topic \(topic!), msg \(msg)")
             }

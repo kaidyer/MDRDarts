@@ -15,12 +15,17 @@ struct ContentView: View {
         let recScores = viewModel.recScores
         let p1score = viewModel.p1score
         let p2score = viewModel.p2score
-        VStack {
+        VStack(spacing: 0) {
+            Spacer()
             Text("Smokin' D.A.R.T.S")
                 .font(.title)
                 .fontWeight(.bold)
+                .offset(y: 50)
             let colors = viewModel.colors
             ZStack {
+                Image("dartboard2")
+                    .resizable()
+                    .frame(width: 550, height: 550)
                 ForEach(colors) {
                     color in SegmentView(color: color)
                 }
@@ -41,7 +46,7 @@ struct ContentView: View {
                     ScoreView(score: Player1, playerID: 1)
                 }.offset(x: 20)
                 VStack {
-                    CurrentPlayer(whichPlayer: viewModel.whichPlayer)
+                    CurrentPlayer(whichPlayer: viewModel.whichPlayer, p1score: p1score, p2score: p2score)
                     Text("Score")
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -52,11 +57,13 @@ struct ContentView: View {
                         .frame(width: 150, height: 150)
                     ScoreView(score: Player2, playerID: 2)
                 }.offset(x: -20)
-            }
+            }.offset(y: -60)
             Text("Recommended Throws")
                 .font(.title)
                 .padding(.top)
+                .offset(y: -60)
             RecView(recScores: recScores, player1Score: p1score, player2Score: p2score)
+                .offset(y: -60)
             Spacer()
             HStack{
                 Text("Connect")
@@ -68,11 +75,13 @@ struct ContentView: View {
                     .onTapGesture {
                         viewModel.subscribe()
                     }
-            }
+            }.offset(y: -60)
             Text("Reset")
+                .padding(.bottom)
                 .onTapGesture {
                     viewModel.resetGame()
-                }
+                }.offset(y: -60)
+            Spacer()
             }
         }
         
@@ -80,11 +89,17 @@ struct ContentView: View {
 
 struct CurrentPlayer: View {
     var whichPlayer: Int
+    var p1score: Int
+    var p2score: Int
     
     var body: some View {
-        // let rectColor: Color
         ZStack{
-            if whichPlayer == 1 {
+            if (p1score == 0) || (p2score == 0) {
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(.yellow)
+                    .frame(width: 150, height: 50)
+            }
+            else if whichPlayer == 1 {
                 RoundedRectangle(cornerRadius: 25)
                     .fill(.red)
                     .frame(width: 150, height: 50)
@@ -94,7 +109,15 @@ struct CurrentPlayer: View {
                     .fill(.blue)
                     .frame(width: 150, height: 50)
             }
-            if whichPlayer == 1 {
+            if p1score == 0 {
+                Text("Player 1 wins!")
+                    .font(.headline)
+            }
+            else if p2score == 0 {
+                Text("Player 2 wins!")
+                    .font(.headline)
+            }
+            else if whichPlayer == 1 {
                 Text("Player 1's Turn")
                     .font(.headline)
             }
