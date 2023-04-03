@@ -48,6 +48,8 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
     var oldscore1 = 201
     var oldscore2 = 201
     
+    var times:[Double] = []
+    
     var p1score: Int {
         if throwCount == 1{
             oldscore1 = score[0].score
@@ -203,7 +205,9 @@ extension DartsViewModel {
             // topic: Int, msg: Str
             // topic: Str, msg: Str
             let now = Date()
-            print("response time: \(now.timeIntervalSince1970)")
+            times.append(now.timeIntervalSince1970)
+            print("\(now.timeIntervalSince1970), ")
+            print(times)
             if (modifier == -1) || (subInt == -1) {
                 print("topic \(topic!), msg \(msg)")
             }
