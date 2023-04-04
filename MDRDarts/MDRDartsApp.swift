@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct MDRDartsApp: App {
+    @StateObject private var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
             // ContentView()
             StartView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
