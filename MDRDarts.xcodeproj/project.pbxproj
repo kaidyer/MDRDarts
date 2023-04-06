@@ -23,6 +23,7 @@
 		1985E6D629AD784100E339BC /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985E6D529AD784100E339BC /* BoardViewModel.swift */; };
 		1985E6D829AD78DF00E339BC /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985E6D729AD78DF00E339BC /* BoardModel.swift */; };
 		19BDB54A29BA4D4D007918EC /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BDB54929BA4D4C007918EC /* TutorialView.swift */; };
+		19ECEDEA29DE0F8900515F61 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ECEDE929DE0F8900515F61 /* AddBookView.swift */; };
 		19F7B02629DCBB220094C8B0 /* Dart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19F7B02429DCBB220094C8B0 /* Dart.xcdatamodeld */; };
 		19F7B02829DCBBB40094C8B0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F7B02729DCBBB40094C8B0 /* DataController.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		1985E6D529AD784100E339BC /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		1985E6D729AD78DF00E339BC /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
 		19BDB54929BA4D4C007918EC /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		19ECEDE929DE0F8900515F61 /* AddBookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		19F7B02529DCBB220094C8B0 /* Dart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dart.xcdatamodel; sourceTree = "<group>"; };
 		19F7B02729DCBBB40094C8B0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		265A692E937456D6315B26E9 /* Pods-MDRDarts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDRDarts.debug.xcconfig"; path = "Target Support Files/Pods-MDRDarts/Pods-MDRDarts.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				194030F029A7DE3B001EA9F0 /* StartView.swift */,
 				194030F629A7E701001EA9F0 /* StartList.swift */,
 				194030FA29A852AB001EA9F0 /* SettingView.swift */,
+				19ECEDE929DE0F8900515F61 /* AddBookView.swift */,
 				194030FC29A856F2001EA9F0 /* DataView.swift */,
 				19BDB54929BA4D4C007918EC /* TutorialView.swift */,
 				1985E6D429AD774900E339BC /* Board */,
@@ -271,6 +274,7 @@
 				194030FD29A856F2001EA9F0 /* DataView.swift in Sources */,
 				1985E6D329AC49C800E339BC /* BoardView.swift in Sources */,
 				19F7B02829DCBBB40094C8B0 /* DataController.swift in Sources */,
+				19ECEDEA29DE0F8900515F61 /* AddBookView.swift in Sources */,
 				19F7B02629DCBB220094C8B0 /* Dart.xcdatamodeld in Sources */,
 				1985E6D629AD784100E339BC /* BoardViewModel.swift in Sources */,
 				1985E6D129A938D500E339BC /* BoardSegment.swift in Sources */,

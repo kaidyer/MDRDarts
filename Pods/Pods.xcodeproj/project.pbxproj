@@ -112,19 +112,19 @@
 		99859C58D0E35B155F76DC61809F7450 /* MQTTClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MQTTClient-umbrella.h"; sourceTree = "<group>"; };
 		9BF85DBDF3592747447175EF3BFD8050 /* MQTTSSLSecurityPolicyDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTSSLSecurityPolicyDecoder.h; path = MQTTClient/MQTTClient/MQTTSSLSecurityPolicyDecoder.h; sourceTree = "<group>"; };
 		9D760CB828F00A5B7EFDAA45D997FBA4 /* MQTTSSLSecurityPolicyTransport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTSSLSecurityPolicyTransport.h; path = MQTTClient/MQTTClient/MQTTSSLSecurityPolicyTransport.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DAF4EE6217B35C30EF7A9229CFDB5A0 /* MQTTClient-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MQTTClient-Info.plist"; sourceTree = "<group>"; };
 		9E690816C95AFDC331F2598DCB1E8114 /* MQTTCFSocketTransport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTCFSocketTransport.h; path = MQTTClient/MQTTClient/MQTTCFSocketTransport.h; sourceTree = "<group>"; };
 		A4699C19F1E67AA6D99E110172413F56 /* MQTTClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTClient.h; path = MQTTClient/MQTTClient/MQTTClient.h; sourceTree = "<group>"; };
 		A4A97FA627DD901962EC02C968217ECF /* MQTTCoreDataPersistence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTCoreDataPersistence.h; path = MQTTClient/MQTTClient/MQTTCoreDataPersistence.h; sourceTree = "<group>"; };
 		A7A1B8A971E4F7452855564D554D98E9 /* MQTTStrict.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTStrict.h; path = MQTTClient/MQTTClient/MQTTStrict.h; sourceTree = "<group>"; };
-		AC8CBB726699461C8CC4974B34483A72 /* Pods-MDRDarts */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MDRDarts"; path = Pods_MDRDarts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC8CBB726699461C8CC4974B34483A72 /* Pods_MDRDarts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDRDarts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98110B109CE01B048648C7E48AD716D /* GCDTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDTimer.h; path = MQTTClient/MQTTClient/GCDTimer.h; sourceTree = "<group>"; };
 		BA9F84E40CB78CB427185FFE9B689902 /* MQTTClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MQTTClient-prefix.pch"; sourceTree = "<group>"; };
 		BCA55E9274890608D9E9CD4D69091BA1 /* MQTTClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MQTTClient-dummy.m"; sourceTree = "<group>"; };
 		BE07A1455FB7E6CA0FC6EED399763F7C /* MQTTSessionSynchron.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTSessionSynchron.h; path = MQTTClient/MQTTClient/MQTTSessionSynchron.h; sourceTree = "<group>"; };
 		C0437558D8A3F6E77832F8217341E2E6 /* MQTTInMemoryPersistence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTInMemoryPersistence.h; path = MQTTClient/MQTTClient/MQTTInMemoryPersistence.h; sourceTree = "<group>"; };
-		C0E79AD53820186F5DE86726D150F447 /* MQTTClient */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MQTTClient; path = MQTTClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0E79AD53820186F5DE86726D150F447 /* MQTTClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MQTTClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37C26A6B40786477B29B4D29DC32FDB /* Pods-MDRDarts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MDRDarts.modulemap"; sourceTree = "<group>"; };
 		C504F75901B1ECC9D803ADE7EB7C3275 /* MQTTTransport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTTransport.m; path = MQTTClient/MQTTClient/MQTTTransport.m; sourceTree = "<group>"; };
 		CAB9116E3D867EA181418CBFAFD31523 /* MQTTStrict.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTStrict.m; path = MQTTClient/MQTTClient/MQTTStrict.m; sourceTree = "<group>"; };
@@ -180,7 +180,6 @@
 				FE895F64912B15CD8E8C060566246020 /* Min */,
 				809C6D8AD923968B15F41DD3BAE6C0A9 /* Support Files */,
 			);
-			name = MQTTClient;
 			path = MQTTClient;
 			sourceTree = "<group>";
 		};
@@ -245,8 +244,8 @@
 		DE7533F29656DCCB58246D8DA04BD2F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C0E79AD53820186F5DE86726D150F447 /* MQTTClient */,
-				AC8CBB726699461C8CC4974B34483A72 /* Pods-MDRDarts */,
+				C0E79AD53820186F5DE86726D150F447 /* MQTTClient.framework */,
+				AC8CBB726699461C8CC4974B34483A72 /* Pods_MDRDarts.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -377,7 +376,7 @@
 			);
 			name = "Pods-MDRDarts";
 			productName = Pods_MDRDarts;
-			productReference = AC8CBB726699461C8CC4974B34483A72 /* Pods-MDRDarts */;
+			productReference = AC8CBB726699461C8CC4974B34483A72 /* Pods_MDRDarts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		18D5937A1FF4E1064BDE592E5E9532EA /* MQTTClient */ = {
@@ -395,7 +394,7 @@
 			);
 			name = MQTTClient;
 			productName = MQTTClient;
-			productReference = C0E79AD53820186F5DE86726D150F447 /* MQTTClient */;
+			productReference = C0E79AD53820186F5DE86726D150F447 /* MQTTClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -510,7 +509,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-MDRDarts/Pods-MDRDarts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -547,7 +546,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-MDRDarts/Pods-MDRDarts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -712,7 +711,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MQTTClient/MQTTClient-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MQTTClient/MQTTClient-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -746,7 +745,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MQTTClient/MQTTClient-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MQTTClient/MQTTClient-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

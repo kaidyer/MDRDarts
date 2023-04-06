@@ -36,18 +36,7 @@ struct StartView: View {
                     }
                 }
                 .navigationTitle("Smokin' DARTS")
-            }
-            List(users) { user in
-                Text(user.name ?? "Unknown")
-            }
-            Button("Add") {
-                let user = User(context: moc)
-                user.id = UUID()
-                user.name = "Poggers"
-                
-                try? moc.save()
-            }
-            
+            }            
         }
     }
 }
