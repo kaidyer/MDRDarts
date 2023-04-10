@@ -14,15 +14,25 @@ struct DataView: View {
     @State private var user = ""
     @State private var showingAddScreen = false
     
+    @StateObject private var viewModel = DataViewModel()
+    
+    
     var body: some View {
         List {
             Section(header: Text("User")) {
                 Picker("User", selection: $user) {
-                    ForEach(users, id: \.self) {
-                        Text($0.name ?? "Unknown")
+                    ForEach(users.map { $0.name! }, id: \.self) {
+                        Text($0)
                     }
                 }
             }
+//            Section(header: Text("\(user) Data")) {
+//                for people in users {
+//                    if people.name == user {
+//                        Text(people.numberThrows)
+//                    }
+//                }
+//            }
             Section(header: Text("Delete All")) {
                 Button("Delete All Users") {
                     for user in users {
