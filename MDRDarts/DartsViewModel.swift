@@ -25,6 +25,8 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
         model.re_init(scores: 201)
     }
     
+    @Published var currentUser = ""
+    
     var score: Array<Score> {
         return model.scores
     }
@@ -190,6 +192,10 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
     func publishMessage(_ message: String, onTopic topic: String) {
         session?.publishData(message.data(using: .utf8, allowLossyConversion: false), onTopic: topic, retain: false, qos: .exactlyOnce)
     }
+    
+    func updateData(score: Int) {
+        model.updateData(username: currentUser, score: score)
+    }
 }
 
 extension DartsViewModel {
@@ -216,9 +222,10 @@ extension DartsViewModel {
                     if throwCount <= 3 {
                         if modifier == Int(11) || modifier == Int(12) {
                             lower(score[0], amt: subInt)
+                            updateData(score: subInt)
                         } else {
                             lower(score[0], amt: modifier * subInt)
-                            
+                            updateData(score: modifier*subInt)
                         }
                         print("modifier \(modifier), subtracting \(subInt)")
                         model.throwCount = throwCount + 1

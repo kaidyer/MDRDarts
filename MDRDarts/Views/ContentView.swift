@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
+    
+    @State private var user = ""
+    
     @StateObject private var viewModel = DartsViewModel()
+    
     var body: some View {
         let Player1 = viewModel.score[0]
         let Player2 = viewModel.score[1]
@@ -17,10 +23,10 @@ struct ContentView: View {
         let p2score = viewModel.p2score
         VStack(spacing: 0) {
             Spacer()
-            Text("Smokin' D.A.R.T.S")
-                .font(.title)
-                .fontWeight(.bold)
-                .offset(y: 50)
+//            Text("Smokin' D.A.R.T.S")
+//                .font(.title)
+//                .fontWeight(.bold)
+//                .offset(y: 50)
             let colors = viewModel.colors
             ZStack {
                 Image("dartboard2")
@@ -57,11 +63,18 @@ struct ContentView: View {
                         .frame(width: 150, height: 150)
                     ScoreView(score: Player2, playerID: 2)
                 }.offset(x: -20)
-            }.offset(y: -60)
-            Text("Recommended Throws")
-                .font(.title)
-                .padding(.top)
-                .offset(y: -60)
+            }.offset(y: -90)
+            
+            Picker("User", selection: $viewModel.currentUser) {
+                ForEach(users.map { $0.name! }, id: \.self) {
+                    Text($0)
+                }
+            }.background(RoundedRectangle(cornerRadius: 5).fill(.gray).opacity(0.5))
+                .offset(y: -90)
+//            Text("Recommended Throws")
+//                .font(.title)
+//                .padding(.top)
+//                .offset(y: -60)
             RecView(recScores: recScores, player1Score: p1score, player2Score: p2score)
                 .offset(y: -60)
             Spacer()
@@ -189,5 +202,6 @@ struct RecView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewDevice("iPhone 14")
     }
 }

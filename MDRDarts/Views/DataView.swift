@@ -26,13 +26,15 @@ struct DataView: View {
                     }
                 }
             }
-//            Section(header: Text("\(user) Data")) {
-//                for people in users {
-//                    if people.name == user {
-//                        Text(people.numberThrows)
-//                    }
-//                }
-//            }
+            Section(header: Text("\(user) Data")) {
+                if let person = users.first(where: { $0.name == user }) {
+                    Text("Number of Throws: \(String(person.numberThrows))")
+                    Text("Lifetime Score Thrown: \(String(person.totalScore))")
+                    Text("Average Score per Throw: \(String(person.averageScore))")
+                } else {
+                    Text("User not found")
+                }
+            }
             Section(header: Text("Delete All")) {
                 Button("Delete All Users") {
                     for user in users {

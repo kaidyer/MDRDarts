@@ -10,6 +10,8 @@ import MQTTClient
 import SwiftUI
 
 struct DartsGame {
+    let dataController = DataController()
+    
     var scores: Array<Score>
     var winner = 0
     // this variable selects which player to subtract from
@@ -96,6 +98,10 @@ struct DartsGame {
         }
         self.centerColors.append(myGreen)
         self.centerColors.append(myRed)
+    }
+    
+    mutating func updateData(username: String, score: Int) {
+    
     }
     
     struct Score: Identifiable {
