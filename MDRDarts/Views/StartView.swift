@@ -10,6 +10,9 @@ import SwiftUI
 struct StartView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
+    
+    //@StateObject private var viewModel = DartsViewModel()
+    
     var body: some View {
         VStack {
             NavigationView{

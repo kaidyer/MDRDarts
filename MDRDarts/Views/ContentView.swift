@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var user = ""
     
     @StateObject private var viewModel = DartsViewModel()
+    // @EnvironmentObject private var viewModel: DartsViewModel
     
     var body: some View {
         let Player1 = viewModel.score[0]
