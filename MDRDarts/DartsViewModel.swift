@@ -10,6 +10,9 @@ import SwiftUI
 import MQTTClient
 
 class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessionManagerDelegate {
+//    @Environment(\.managedObjectContext) var moc
+//    @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
+    
     typealias Score = DartsGame.Score
     
     private static let startingScore = 201
@@ -194,7 +197,11 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
     }
     
     func updateData(score: Int) {
-        model.updateData(username: currentUser, score: score)
+//        for user in users {
+//            if user.name == currentUser {
+//                DataController().editUser(user: user, totalScore: Int16(score), context: moc)
+//            }
+//        }
     }
 }
 
@@ -222,10 +229,10 @@ extension DartsViewModel {
                     if throwCount <= 3 {
                         if modifier == Int(11) || modifier == Int(12) {
                             lower(score[0], amt: subInt)
-                            updateData(score: subInt)
+                            //updateData(score: subInt)
                         } else {
                             lower(score[0], amt: modifier * subInt)
-                            updateData(score: modifier*subInt)
+                            //updateData(score: modifier*subInt)
                         }
                         print("modifier \(modifier), subtracting \(subInt)")
                         model.throwCount = throwCount + 1

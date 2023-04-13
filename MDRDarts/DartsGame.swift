@@ -100,9 +100,9 @@ struct DartsGame {
         self.centerColors.append(myRed)
     }
     
-    mutating func updateData(username: String, score: Int) {
-    
-    }
+//    mutating func updateData(username: String, score: Int) {
+//    
+//    }
     
     struct Score: Identifiable {
         var score: Int

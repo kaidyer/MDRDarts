@@ -19,4 +19,24 @@ class DataController: ObservableObject {
             
         }
     }
+    
+    func save(context: NSManagedObjectContext) {
+        do {
+            try context.save()
+            print("Data saved successfully. WUHU!!!")
+        } catch {
+            // Handle errors in our database
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    func editUser(user: User, totalScore: Int16, context: NSManagedObjectContext) {
+        user.totalScore += totalScore
+        user.numberThrows += 1
+        //user.averageScore = user.totalScore / user.numberThrows
+        //user.name = "Gotcha"
+        
+        save(context: context)
+    }
 }
