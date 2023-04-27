@@ -15,10 +15,13 @@ struct StartView: View {
     
     var body: some View {
         VStack {
+            Text("Smokin' DARTS")
+                .font(.custom("Metalsmith-Regular", size: 35))
             NavigationView{
                 List {
                     NavigationLink{
                         ContentView()
+                            .environmentObject(AppState())
                     } label: {
                         StartList(color: .red, titletext: "Start Darts", imagename: "darts", useSFSymbol: false)
                     }
@@ -28,17 +31,18 @@ struct StartView: View {
                         StartList(color: .yellow, titletext: "Data", imagename: "list.number", useSFSymbol: true)
                     }
                     NavigationLink{
-                        SettingView(gameType: 1, trackStats: true)
+                        SettingView()
+                            .environmentObject(AppState())
                     } label: {
                         StartList(color: .blue, titletext: "Settings", imagename: "gear", useSFSymbol: true)
                     }
                     NavigationLink{
-                        TutorialView()
+                        Home()
                     } label: {
                         StartList(color: .green, titletext: "How to Play", imagename: "studentdesk", useSFSymbol: true)
                     }
                 }
-                .navigationTitle("Smokin' DARTS")
+//                .navigationBarTitle(Text("Smokin' DARTS").font(.custom("Metalsmith-Regular", size: 35)))
             }            
         }
     }

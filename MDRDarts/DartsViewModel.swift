@@ -10,8 +10,6 @@ import SwiftUI
 import MQTTClient
 
 class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessionManagerDelegate {
-//    @Environment(\.managedObjectContext) var moc
-//    @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
     
     typealias Score = DartsGame.Score
     
@@ -169,6 +167,13 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
         session?.password = "Green82"
         
         session?.connect()
+        
+        for family: String in UIFont.familyNames {
+            print(family)
+            for names: String in UIFont.fontNames(forFamilyName: family) {
+                print("==\(names)")
+            }
+        }
     }
     
     func subscribe() {
@@ -197,11 +202,6 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
     }
     
     func updateData(score: Int) {
-//        for user in users {
-//            if user.name == currentUser {
-//                DataController().editUser(user: user, totalScore: Int16(score), context: moc)
-//            }
-//        }
     }
 }
 

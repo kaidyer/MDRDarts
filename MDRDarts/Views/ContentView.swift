@@ -4,6 +4,10 @@
 //
 //  Created by Kai Dyer on 12/5/22.
 //
+// FONT NAMES
+// MakeupPersonalUse-Regular
+// Metalsmith-Regular
+// CinderelaPersonalUse-Regular
 
 import SwiftUI
 
@@ -12,9 +16,11 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
     
     @State private var user = ""
+    @EnvironmentObject var appState: AppState
     
     @StateObject private var viewModel = DartsViewModel()
     // @EnvironmentObject private var viewModel: DartsViewModel
+    
     
     var body: some View {
         let Player1 = viewModel.score[0]
@@ -24,8 +30,9 @@ struct ContentView: View {
         let p2score = viewModel.p2score
         VStack(spacing: 0) {
             Spacer()
-//            Text("Smokin' D.A.R.T.S")
-//                .font(.title)
+//            Text("  Smokin' D.A.R.T.S  ")
+//                .font(.custom("MakeupPersonalUse-Regular", size: 35))
+//                .font(.custom("Metalsmith-Regular", size: 35))
 //                .fontWeight(.bold)
 //                .offset(y: 50)
             let colors = viewModel.colors
@@ -66,12 +73,12 @@ struct ContentView: View {
                 }.offset(x: -20)
             }.offset(y: -90)
             
-            Picker("User", selection: $viewModel.currentUser) {
-                ForEach(users.map { $0.name! }, id: \.self) {
-                    Text($0)
-                }
-            }.background(RoundedRectangle(cornerRadius: 5).fill(.gray).opacity(0.5))
-                .offset(y: -90)
+//            Picker("User", selection: $viewModel.currentUser) {
+//                ForEach(users.map { $0.name! }, id: \.self) {
+//                    Text($0)
+//                }
+//            }.background(RoundedRectangle(cornerRadius: 5).fill(.gray).opacity(0.5))
+//                .offset(y: -90)
 //            Text("Recommended Throws")
 //                .font(.title)
 //                .padding(.top)

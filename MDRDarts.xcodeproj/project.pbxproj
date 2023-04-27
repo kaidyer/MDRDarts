@@ -18,6 +18,13 @@
 		194030F729A7E701001EA9F0 /* StartList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194030F629A7E701001EA9F0 /* StartList.swift */; };
 		194030FB29A852AB001EA9F0 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194030FA29A852AB001EA9F0 /* SettingView.swift */; };
 		194030FD29A856F2001EA9F0 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194030FC29A856F2001EA9F0 /* DataView.swift */; };
+		195C40D629F9DFA000BDDE43 /* Cinderela.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 195C40D329F9DD1A00BDDE43 /* Cinderela.ttf */; };
+		195C40D729F9DFA300BDDE43 /* Makeup.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 195C40D429F9DD2400BDDE43 /* Makeup.ttf */; };
+		195C40D829F9DFA600BDDE43 /* Metalsmith.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 195C40D529F9DD3200BDDE43 /* Metalsmith.ttf */; };
+		195DA64529E88EC200947553 /* CustomIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195DA64229E88EC200947553 /* CustomIndicatorView.swift */; };
+		195DA64629E88EC200947553 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195DA64329E88EC200947553 /* CustomTextField.swift */; };
+		195DA64729E88EC200947553 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195DA64429E88EC200947553 /* Home.swift */; };
+		195DA64929E88ED100947553 /* PageIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195DA64829E88ED100947553 /* PageIntro.swift */; };
 		197CD30029DF419000372971 /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197CD2FF29DF419000372971 /* DataViewModel.swift */; };
 		197CD30229DF41A000372971 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197CD30129DF41A000372971 /* DataModel.swift */; };
 		1985E6D129A938D500E339BC /* BoardSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985E6D029A938D500E339BC /* BoardSegment.swift */; };
@@ -42,6 +49,14 @@
 		194030F629A7E701001EA9F0 /* StartList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartList.swift; sourceTree = "<group>"; };
 		194030FA29A852AB001EA9F0 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		194030FC29A856F2001EA9F0 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		195C40D329F9DD1A00BDDE43 /* Cinderela.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cinderela.ttf; path = "cinderela-font/Cinderela.ttf"; sourceTree = "<group>"; };
+		195C40D429F9DD2400BDDE43 /* Makeup.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Makeup.ttf; path = "makeup-font/Makeup.ttf"; sourceTree = "<group>"; };
+		195C40D529F9DD3200BDDE43 /* Metalsmith.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Metalsmith.ttf; path = "metalsmith-font/Metalsmith.ttf"; sourceTree = "<group>"; };
+		195C40D929F9E04300BDDE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		195DA64229E88EC200947553 /* CustomIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIndicatorView.swift; sourceTree = "<group>"; };
+		195DA64329E88EC200947553 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		195DA64429E88EC200947553 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		195DA64829E88ED100947553 /* PageIntro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIntro.swift; sourceTree = "<group>"; };
 		197CD2FF29DF419000372971 /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 		197CD30129DF41A000372971 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		1985E6D029A938D500E339BC /* BoardSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSegment.swift; sourceTree = "<group>"; };
@@ -98,10 +113,13 @@
 		190A4FB0293E86A300526C4A /* MDRDarts */ = {
 			isa = PBXGroup;
 			children = (
+				195C40D929F9E04300BDDE43 /* Info.plist */,
+				195C40D229F9DCCF00BDDE43 /* Fonts */,
 				194030F529A7E3D1001EA9F0 /* Views */,
 				190A4FB1293E86A300526C4A /* MDRDartsApp.swift */,
 				190A4FBF293E88F500526C4A /* DartsViewModel.swift */,
 				190A4FC1293E891B00526C4A /* DartsGame.swift */,
+				195DA64829E88ED100947553 /* PageIntro.swift */,
 				19F7B02429DCBB220094C8B0 /* Dart.xcdatamodeld */,
 				190A4FB5293E86A500526C4A /* Assets.xcassets */,
 				190A4FB7293E86A500526C4A /* Preview Content */,
@@ -130,9 +148,22 @@
 				19ECEDE929DE0F8900515F61 /* AddBookView.swift */,
 				194030FC29A856F2001EA9F0 /* DataView.swift */,
 				19BDB54929BA4D4C007918EC /* TutorialView.swift */,
+				195DA64229E88EC200947553 /* CustomIndicatorView.swift */,
+				195DA64329E88EC200947553 /* CustomTextField.swift */,
+				195DA64429E88EC200947553 /* Home.swift */,
 				1985E6D429AD774900E339BC /* Board */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		195C40D229F9DCCF00BDDE43 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				195C40D329F9DD1A00BDDE43 /* Cinderela.ttf */,
+				195C40D429F9DD2400BDDE43 /* Makeup.ttf */,
+				195C40D529F9DD3200BDDE43 /* Metalsmith.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		1985E6D429AD774900E339BC /* Board */ = {
@@ -216,7 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				190A4FB9293E86A500526C4A /* Preview Assets.xcassets in Resources */,
+				195C40D729F9DFA300BDDE43 /* Makeup.ttf in Resources */,
+				195C40D629F9DFA000BDDE43 /* Cinderela.ttf in Resources */,
 				190A4FB6293E86A500526C4A /* Assets.xcassets in Resources */,
+				195C40D829F9DFA600BDDE43 /* Metalsmith.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,16 +304,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1985E6D829AD78DF00E339BC /* BoardModel.swift in Sources */,
+				195DA64929E88ED100947553 /* PageIntro.swift in Sources */,
 				19BDB54A29BA4D4D007918EC /* TutorialView.swift in Sources */,
 				190A4FB4293E86A300526C4A /* ContentView.swift in Sources */,
 				194030F129A7DE3B001EA9F0 /* StartView.swift in Sources */,
+				195DA64629E88EC200947553 /* CustomTextField.swift in Sources */,
 				194030F729A7E701001EA9F0 /* StartList.swift in Sources */,
 				194030FB29A852AB001EA9F0 /* SettingView.swift in Sources */,
 				197CD30029DF419000372971 /* DataViewModel.swift in Sources */,
+				195DA64529E88EC200947553 /* CustomIndicatorView.swift in Sources */,
 				190A4FB2293E86A300526C4A /* MDRDartsApp.swift in Sources */,
 				190A4FC2293E891B00526C4A /* DartsGame.swift in Sources */,
 				194030FD29A856F2001EA9F0 /* DataView.swift in Sources */,
 				1985E6D329AC49C800E339BC /* BoardView.swift in Sources */,
+				195DA64729E88EC200947553 /* Home.swift in Sources */,
 				19F7B02829DCBBB40094C8B0 /* DataController.swift in Sources */,
 				19ECEDEA29DE0F8900515F61 /* AddBookView.swift in Sources */,
 				19F7B02629DCBB220094C8B0 /* Dart.xcdatamodeld in Sources */,
@@ -419,6 +457,7 @@
 				DEVELOPMENT_TEAM = RM9W5UZAM4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MDRDarts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +488,7 @@
 				DEVELOPMENT_TEAM = RM9W5UZAM4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MDRDarts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
