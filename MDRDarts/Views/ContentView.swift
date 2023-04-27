@@ -51,100 +51,92 @@ struct ContentView: View {
                     .stroke(.black)
                     .background(Circle().fill(viewModel.centerColors[1]))
                     .frame(width: 25)
-            }
+            }.offset(y: -20)
             HStack{
-                ZStack{
-                    RoundedRectangle(cornerRadius: 25)
-                        .fill(.red)
-                        .frame(width: 150, height: 150)
-                    ScoreView(score: Player1, playerID: 1)
-                }.offset(x: 20)
+                ScoreView(score: Player1, playerID: 1).offset(x: 20)
+                Spacer()
                 VStack {
                     CurrentPlayer(whichPlayer: viewModel.whichPlayer, p1score: p1score, p2score: p2score)
                     Text("Score")
-                        .font(.largeTitle)
+                        .font(.custom("Metalsmith-Regular", size: 30))
                         .fontWeight(.bold)
                 }
-                ZStack{
-                    RoundedRectangle(cornerRadius: 25)
-                        .fill(.blue)
-                        .frame(width: 150, height: 150)
-                    ScoreView(score: Player2, playerID: 2)
-                }.offset(x: -20)
+                Spacer()
+                ScoreView(score: Player2, playerID: 2).offset(x: -20)
             }.offset(y: -90)
-            
-//            Picker("User", selection: $viewModel.currentUser) {
-//                ForEach(users.map { $0.name! }, id: \.self) {
-//                    Text($0)
-//                }
-//            }.background(RoundedRectangle(cornerRadius: 5).fill(.gray).opacity(0.5))
-//                .offset(y: -90)
-//            Text("Recommended Throws")
-//                .font(.title)
-//                .padding(.top)
-//                .offset(y: -60)
             RecView(recScores: recScores, player1Score: p1score, player2Score: p2score)
                 .offset(y: -60)
             Spacer()
             HStack{
                 Text("Connect")
+                    .font(.custom("Metalsmith-Regular", size: 15))
                     .onTapGesture {
                         viewModel.viewDidLoad()
                         //viewModel.subscribe()
                     }
                 Text("Subscribe")
+                    .font(.custom("Metalsmith-Regular", size: 15))
                     .onTapGesture {
                         viewModel.subscribe()
                     }
             }.offset(y: -60)
             Text("Reset")
+                .font(.custom("Metalsmith-Regular", size: 15))
                 .padding(.bottom)
                 .onTapGesture {
                     viewModel.resetGame()
                 }.offset(y: -60)
             Spacer()
-            }
-        }
-        
+        }.background(Image("wood").resizable().aspectRatio(contentMode: .fill).offset(y: -50))
     }
+        
+}
 
 struct CurrentPlayer: View {
     var whichPlayer: Int
     var p1score: Int
     var p2score: Int
     
+    let width: CGFloat = 105
+    let height: CGFloat = 30
+    let radius: CGFloat = 15
+    
     var body: some View {
         ZStack{
+            RoundedRectangle(cornerRadius: 25, style: .continuous)
+                .fill(.gray)
+                .frame(width: width+5, height: height+5)
+                .offset(x: 2.5, y: 2.5)
             if (p1score == 0) || (p2score == 0) {
-                RoundedRectangle(cornerRadius: 25)
+                RoundedRectangle(cornerRadius: radius, style: .continuous)
                     .fill(.yellow)
-                    .frame(width: 150, height: 50)
+                    .frame(width: width, height: height)
             }
             else if whichPlayer == 1 {
-                RoundedRectangle(cornerRadius: 25)
+                RoundedRectangle(cornerRadius: radius, style: .continuous)
                     .fill(.red)
-                    .frame(width: 150, height: 50)
+                    .frame(width: width, height: height)
             }
             else {
-                RoundedRectangle(cornerRadius: 25)
+                RoundedRectangle(cornerRadius: radius, style: .continuous)
                     .fill(.blue)
-                    .frame(width: 150, height: 50)
+                    .frame(width: width, height: height)
             }
             if p1score == 0 {
                 Text("Player 1 wins!")
-                    .font(.headline)
+                    .font(.custom("Metalsmith-Regular", size: 15))
             }
             else if p2score == 0 {
                 Text("Player 2 wins!")
-                    .font(.headline)
+                    .font(.custom("Metalsmith-Regular", size: 15))
             }
             else if whichPlayer == 1 {
                 Text("Player 1's Turn")
-                    .font(.headline)
+                    .font(.custom("Metalsmith-Regular", size: 15))
             }
             else {
                 Text("Player 2's Turn")
-                    .font(.headline)
+                    .font(.custom("Metalsmith-Regular", size: 15))
             }
         }
     }
@@ -155,12 +147,29 @@ struct ScoreView: View {
     var playerID: Int
     
     var body: some View {
-        VStack{
-            Text("Player \(playerID)")
-                .font(.system(size: 25))
-            Text(String(score.score))
-                .font(.system(size: 40))
-                .fontWeight(.bold)
+        ZStack {
+            RoundedRectangle(cornerRadius: 25, style: .continuous)
+                .fill(.gray)
+                .frame(width: 110, height: 110)
+                .offset(x: 2.5, y: 2.5)
+            if playerID == 1 {
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(.red)
+                    .frame(width: 105, height: 105)
+            }
+            else {
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(.blue)
+                    .frame(width: 105, height: 105)
+            }
+            VStack{
+                Text("Player \(playerID)")
+                    .font(.custom("Metalsmith-Regular", size: 20))
+                    .offset(y: 10)
+                Text(String(score.score))
+                    .font(.custom("Metalsmith-Regular", size: 50))
+                    .fontWeight(.bold)
+            }
         }
     }
 }
@@ -175,14 +184,17 @@ struct RecView: View {
             Spacer()
             if (Int(player1Score) == 0) {
                 Text("Player 1 wins!")
+                    .font(.custom("Metalsmith-Regular", size: 25))
             }
             else {
                 if let recommendedText1 = recScores[player1Score] {
                     Text(recommendedText1)
+                        .font(.custom("Metalsmith-Regular", size: 25))
                 }
                 else {
                     let recommendedText1 = "No Checkout"
                     Text(recommendedText1)
+                        .font(.custom("Metalsmith-Regular", size: 25))
                 }
             }
             
@@ -190,14 +202,17 @@ struct RecView: View {
             
             if (Int(player2Score) == 0) {
                 Text("Player 2 wins!")
+                    .font(.custom("Metalsmith-Regular", size: 25))
             }
             else {
                 if let recommendedText2 = recScores[player2Score] {
                     Text(recommendedText2)
+                        .font(.custom("Metalsmith-Regular", size: 25))
                 }
                 else {
                     let recommendedText2 = "No Checkout"
                     Text(recommendedText2)
+                        .font(.custom("Metalsmith-Regular", size: 25))
                 }
             }
             Spacer()

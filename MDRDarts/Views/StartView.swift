@@ -15,8 +15,8 @@ struct StartView: View {
     
     var body: some View {
         VStack {
-            Text("Smokin' DARTS")
-                .font(.custom("Metalsmith-Regular", size: 35))
+//            Text("Smokin' DARTS")
+//                .font(.custom("Metalsmith-Regular", size: 35))
             NavigationView{
                 List {
                     NavigationLink{
@@ -42,7 +42,7 @@ struct StartView: View {
                         StartList(color: .green, titletext: "How to Play", imagename: "studentdesk", useSFSymbol: true)
                     }
                 }
-//                .navigationBarTitle(Text("Smokin' DARTS").font(.custom("Metalsmith-Regular", size: 35)))
+                .navigationBarTitle(Text("Smokin' DARTS").font(.custom("Metalsmith-Regular", size: 35)))
             }            
         }
     }
