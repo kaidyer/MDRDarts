@@ -71,6 +71,10 @@ class DartsViewModel: NSObject, ObservableObject, MQTTSessionDelegate, MQTTSessi
         model.lower(score: score, amt: amt)
     }
     
+    func setScore(player: Int, score: Int) {
+        model.scores[player].score = score
+    }
+    
     // MARK: - DARTBOARD FUNCTIONS
     
     let startAngles1: [Double] = [63, 27, -9, -45, -81, -117, -153, -189, -225, -261]
@@ -236,6 +240,9 @@ extension DartsViewModel {
                         }
                         print("modifier \(modifier), subtracting \(subInt)")
                         model.throwCount = throwCount + 1
+                        if model.throwCount == 2 {
+                            model.reset_colors()
+                        }
                         
                         if subInt == Int(25) {
                             model.centerColors[0] = Color(.yellow)
@@ -252,7 +259,7 @@ extension DartsViewModel {
                             case 3:
                                 setYellow(slice: subInt, block: 2)
                             default:
-                                setYellow(slice: subInt, block: 1)
+                                print("Miss")
                             }
                         }
                         
@@ -260,7 +267,7 @@ extension DartsViewModel {
                     if throwCount > 3 {
                         model.whichPlayer = 2
                         model.throwCount = 1
-                        model.reset_colors()
+                        // model.reset_colors()
                     }
                 }
                 else {
@@ -274,6 +281,9 @@ extension DartsViewModel {
                         
                         print("modifier \(modifier), subtracting \(subInt)")
                         model.throwCount = throwCount + 1
+                        if model.throwCount == 2 {
+                            model.reset_colors()
+                        }
                         
                         if subInt == Int(25) {
                             model.centerColors[0] = Color(.yellow)
@@ -290,14 +300,14 @@ extension DartsViewModel {
                             case 3:
                                 setYellow(slice: subInt, block: 2)
                             default:
-                                setYellow(slice: subInt, block: 1)
+                                print("Miss")
                             }
                         }
                     }
                     if throwCount > 3 {
                         model.whichPlayer = 1
                         model.throwCount = 1
-                        model.reset_colors()
+                        // model.reset_colors()
                     }
                 }
             }

@@ -21,6 +21,11 @@ struct ContentView: View {
     @StateObject private var viewModel = DartsViewModel()
     // @EnvironmentObject private var viewModel: DartsViewModel
     
+    @State private var presentAlert1 = false
+    @State private var setScore1: String = ""
+    @State private var presentAlert2 = false
+    @State private var setScore2: String = ""
+    
     
     var body: some View {
         let Player1 = viewModel.score[0]
@@ -30,11 +35,11 @@ struct ContentView: View {
         let p2score = viewModel.p2score
         VStack(spacing: 0) {
             Spacer()
-//            Text("  Smokin' D.A.R.T.S  ")
+            Text("  Smokin' D.A.R.T.S  ")
 //                .font(.custom("MakeupPersonalUse-Regular", size: 35))
-//                .font(.custom("Metalsmith-Regular", size: 35))
-//                .fontWeight(.bold)
-//                .offset(y: 50)
+                .font(.custom("Metalsmith-Regular", size: 35))
+                .fontWeight(.bold)
+                .offset(y: 50)
             let colors = viewModel.colors
             ZStack {
                 Image("dartboard2")
@@ -54,6 +59,18 @@ struct ContentView: View {
             }.offset(y: -20)
             HStack{
                 ScoreView(score: Player1, playerID: 1).offset(x: 20)
+                    .onTapGesture{
+                        presentAlert1 = true
+                    }
+                    .alert("Did We Mess Up?", isPresented: $presentAlert1, actions: {
+                                TextField("New Score", text: $setScore1)
+                                Button("Set Score", action: {
+                                    viewModel.setScore(player: 0, score: Int(setScore1) ?? 501)
+                                })
+                                Button("Cancel", role: .cancel, action: {})
+                            }, message: {
+                                Text("Override Score for Player 1.")
+                            })
                 Spacer()
                 VStack {
                     CurrentPlayer(whichPlayer: viewModel.whichPlayer, p1score: p1score, p2score: p2score)
@@ -63,6 +80,18 @@ struct ContentView: View {
                 }
                 Spacer()
                 ScoreView(score: Player2, playerID: 2).offset(x: -20)
+                    .onTapGesture{
+                        presentAlert2 = true
+                    }
+                    .alert("Did We Mess Up?", isPresented: $presentAlert2, actions: {
+                                TextField("New Score", text: $setScore2)
+                                Button("Set Score", action: {
+                                    viewModel.setScore(player: 1, score: Int(setScore2) ?? 501)
+                                })
+                                Button("Cancel", role: .cancel, action: {})
+                            }, message: {
+                                Text("Override Score for Player 2.")
+                            })
             }.offset(y: -90)
             RecView(recScores: recScores, player1Score: p1score, player2Score: p2score)
                 .offset(y: -60)
@@ -78,6 +107,11 @@ struct ContentView: View {
                     .font(.custom("Metalsmith-Regular", size: 15))
                     .onTapGesture {
                         viewModel.subscribe()
+                    }
+                Text("Start")
+                    .font(.custom("Metalsmith-Regular", size: 15))
+                    .onTapGesture {
+                        viewModel.publishMessage("Start", onTopic: "Start")
                     }
             }.offset(y: -60)
             Text("Reset")

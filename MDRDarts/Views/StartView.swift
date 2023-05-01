@@ -42,7 +42,7 @@ struct StartView: View {
                         StartList(color: .green, titletext: "How to Play", imagename: "studentdesk", useSFSymbol: true)
                     }
                 }
-                .navigationBarTitle(Text("Smokin' DARTS").font(.custom("Metalsmith-Regular", size: 35)))
+                .navigationBarTitle("Smokin' DARTS")
             }            
         }
     }
